@@ -29,9 +29,11 @@ import os
 
 # At the end of file. add these lines
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-MEDIA_URLS ='/img/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Also Make aure To set allowed_hosts to '*'
 
@@ -68,7 +70,7 @@ ROOT_URLCONF = 'HWS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
