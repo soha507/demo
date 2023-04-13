@@ -35,7 +35,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 
 # Also Make aure To set allowed_hosts to '*'
 
-ALLOWED_HOSTS = ['*']
+
 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
