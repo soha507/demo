@@ -23,7 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-10)5k*=z@59xt27u=wdkom*1j+92&!wrnj29)r3v!oyi*n%&#b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+import os 
+
+# At the end of file. add these lines
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
+
+# Also Make aure To set allowed_hosts to '*'
+
+ALLOWED_HOSTS = ['*']
+
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
